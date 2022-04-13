@@ -2,7 +2,7 @@
 A Mjpeg like Video Player for the Teensy 4.1 development Boards.
 ## Usage
   ### Dependencies
-  #### Linux
+  #### Linux/Unix
   Install [ffmpeg](https://ffmpeg.org) and [python3](https://python.org)
   #### Teensy
   You have to install the [Teensy Audio Library](https://github.com/PaulStoffregen/Audio) and The [Teensy Audio Codecs Library](https://github.com/FrankBoesing/Arduino-Teensy-Codec-lib) library.
