@@ -27,7 +27,7 @@ AudioControlSGTL5000     sgtl5000_1;     //xy=240,153
 File mjpeg;
 JPEGDEC jpeg;
 
-char filetoopen[50] = "3.vid";
+char filetoopen[50] = "yourvideo";
 
 void setup() {
   // put your setup code here, to run once:
@@ -39,7 +39,7 @@ void setup() {
   sgtl5000_1.enable();
   sgtl5000_1.volume(0.5);
   if(!SD.begin(CS_PIN)){
-    while(true){Serial.println("Unable to acces the SD card"); delay(500);}
+    while(true){Serial.println("Unable to access the SD card"); delay(500);}
   }
   mjpeg = SD.open(filetoopen);
   if(!mjpeg){
