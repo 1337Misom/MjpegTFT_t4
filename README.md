@@ -28,3 +28,4 @@ This is a pretty basic Video format it is build up like this:
 ## Todo (PR's appreciated)
 - Some kind of API
 - Better sync with audio and video
+- Using DMA to run in background
