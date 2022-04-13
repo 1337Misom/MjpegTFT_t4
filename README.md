@@ -12,7 +12,7 @@ A Mjpeg like Video Player for the Teensy 4.1 development Boards.
   ### Using with Teensy
   To run the Video Player:
   - Install the Dependencies for the Teensy
-  - Clone the repo to your Arduino sketchbook and Go to File -> Sketchbook -> MjpegTFT_t4.
+  - Clone the repo to your Arduino sketchbook and Go to File -> examples -> MjpegTFT_t4 -> PlayVid.
   - Change The `CS_PIN` To your SD CS PIN and all the defines for the TFT to your pins
   - Change `filetoopen` to the name of your video file
 ## File Format
@@ -20,11 +20,11 @@ This is a pretty basic Video format it is build up like this:
 ### The Header
   1. The first two bytes are the fps
   2. The two following are the amount of frames in the video
-  3. And next four are the position of the aac audio
+  3. And the next four are the position of the aac audio
 ### Video
-  Each jpeg has two bytes before it with the size of the jpeg.
+  Each jpeg has two bytes before it, with the size of the jpeg.
 ### Audio
-  Audio is just an aac file behind the whole video
+  Audio is just an aac file behind the whole video.
 ## Todo
 - Some kind of API
 - Better sync with audio and video
