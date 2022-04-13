@@ -5,7 +5,7 @@ A Mjpeg like Video Player for the Teensy 4.1 development Boards.
   #### Linux/Unix
   Install [ffmpeg](https://ffmpeg.org) and [python3](https://python.org)
   #### Teensy
-  You have to install the [Teensy Audio Library](https://github.com/PaulStoffregen/Audio),[Teensy Audio Codecs Library (My Version)](https://github.com/1337Mosi/Arduino-Teensy-Codec-lib),[JPEGDEC](https://github.com/bitbank2/JPEGDEC) and [ILI9341_t3n (My Version)](https://github.com/1337Mosi/ILI9341_t3n) library.
+  You have to install the [Teensy Audio Library](https://github.com/PaulStoffregen/Audio),[Teensy Audio Codecs Library (My Version)](https://github.com/1337Misom/Arduino-Teensy-Codec-lib),[JPEGDEC](https://github.com/bitbank2/JPEGDEC) and [ILI9341_t3n (My Version)](https://github.com/1337Misom/ILI9341_t3n) library.
   ### Creating a Video
   - First install the Dependencies for your PC
   - Then run the create.py script in the scripts folder.
