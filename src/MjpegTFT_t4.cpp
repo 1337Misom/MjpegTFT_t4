@@ -1,6 +1,19 @@
 #include "MjpegTFT_t4.h"
 
 #define JPGBUFSIZE 100000
+#define headsize 7
+
+byte header[headsize] = {0x00,0x00,0x00,0x4A,0x41,0x56,0xFF};
+int checkhead(File mjpeg){
+  byte fhead[headsize];
+  mjpeg.read(fhead,headsize);
+  bool valid = false;
+  if (memcmp(fhead, header, headsize) == 0) {
+    valid = true;
+  }
+  //Serial.println(valid);
+  return valid;
+}
 
 int playVid(File mjpeg,JPEGDEC jpeg,int JPEGDraw,AudioPlaySdAac &playAac,uint32_t vidstart=0){
   //Initalizing the variables
@@ -12,6 +25,10 @@ int playVid(File mjpeg,JPEGDEC jpeg,int JPEGDraw,AudioPlaySdAac &playAac,uint32_
   
   //Getting fps,frames and the position where the audio is stored
   mjpeg.seek(vidstart);
+  if(!checkhead(mjpeg)){
+    mjpeg.seek(0);
+    return 1;
+  }
   mjpeg.read(&fps,2);
   mjpeg.read(&frames,2);
   mjpeg.read(&audpos,4);
