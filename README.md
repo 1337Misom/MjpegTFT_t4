@@ -18,9 +18,10 @@ A Mjpeg like Video Player for the Teensy 4.1 development Boards.
 ## File Format
 This is a pretty basic Video format it is build up like this:
 ### The Header
-  1. The first two bytes are the fps
-  2. The two following are the amount of frames in the video
-  3. And the next four are the position of the aac audio
+  1. The first seven bytes are the header : 0x00,0x00,0x00,0x4A,0x41,0x56,0xFF
+  2. The next two bytes are the fps
+  3. The two following are the amount of frames in the video
+  4. And the next four are the position of the aac audio
 ### Video
   Each jpeg has two bytes before it, with the size of the jpeg.
 ### Audio
