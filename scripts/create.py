@@ -8,6 +8,7 @@ parser.add_argument("y",help="The height of the finished video",type=int)
 parser.add_argument("fps",help="The framerate for the finished video",type=int)
 parser.add_argument("inputfile",help="The video to convert",type=str)
 parser.add_argument("outputfile",help="The output file",type=str)
+headbytes = b'\x00\x00\x00\x4A\x41\x56\xFF'
 args = parser.parse_args()
 x = args.x
 y = args.y
@@ -22,8 +23,9 @@ vid = open(out+".mjpeg","rb")
 vidbuf = vid.read()
 vidsplit = vidbuf.split(b'\xff\xd9')
 frames = len(vidsplit)-1
-mjpegsize = (int(os.path.getsize(out+".mjpeg")+8)) + (frames*2)
+mjpegsize = (int(os.path.getsize(out+".mjpeg")+15)) + (frames*2)
 outf = open(out,"wb")
+outf.write(headbytes)
 outf.write(fps.to_bytes(2,byteorder='little'))
 outf.write(frames.to_bytes(2,byteorder='little'))
 outf.write(mjpegsize.to_bytes(4,byteorder='little'))
